@@ -14,7 +14,7 @@ html, body {
 	top: 0; /* required - makes sure the menu sits where it's supposed to sit */
 	z-index: 1000; /* required - makes sure the menu doesn't get covered by anything else */
 	width: 100%; /* required - makes the menu go all the way across the viewport */
-	background-color: #ccc; 
+	background-color: #000000;
 }
 .main-menu ul {
 	/* standard removal of UL styles */
@@ -31,7 +31,9 @@ html, body {
 	/* typical - make links look/act like buttons */
 	display: block;
 	padding: 15px;
-	color: #666;
+	color: #ffffff;
+	font-family: 'Josefin Slab', serif;
+	font-size: 18px;
 	text-decoration: none;
 }
 .main-menu a:hover { color: #ddd; }
@@ -44,6 +46,8 @@ section {
     padding-top: 75px; /* how tall is the persistent nav bar at the top? */
     padding-bottom: 25px; /* typical - keep content away from the next section */
     text-align: center; /* typical for long scrolly pages */
+    padding-left: 25px;
+    padding-right: 25px;
 }
 
  /* typical - alter the bg for every other section */

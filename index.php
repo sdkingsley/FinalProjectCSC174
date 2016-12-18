@@ -1,11 +1,94 @@
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <meta charset="utf-8">
-    <title>Long Scrolly Template</title>
-    <link rel="stylesheet" href="css/long-scrolly.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Sarah Kingsley</title>
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:400,700|PT+Sans+Narrow:400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/long-scrolly.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/lightbox.css" />
+
+    <script type="text/javascript">
+        function openModal() {
+          document.getElementById('myModal').style.display = "block";
+        }
+
+        function closeModal() {
+          document.getElementById('myModal').style.display = "none";
+        }
+
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+          showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+          showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("demo");
+          var captionText = document.getElementById("caption");
+          if (n > slides.length) {slideIndex = 1}
+          if (n < 1) {slideIndex = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+          }
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";
+          dots[slideIndex-1].className += " active";
+          captionText.innerHTML = dots[slideIndex-1].alt;
+        }
+    </script>
+
+    <script type="text/javascript">
+         function validate()
+      {
+      
+         if( document.myForm.name.value == "" )
+         {
+            alert( "Please provide your name!" );
+            document.myForm.name.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.email.value == "" )
+         {
+            alert( "Please provide your email!" );
+            document.myForm.email.focus() ;
+            return false;
+         }
+         
+         if( document.myForm.phone.value == "" ||
+         isNaN( document.myForm.phone.value ) ||
+         document.myForm.phone.value.length != 10 )
+         {
+            alert( "Please provide a number in format ###########." );
+            document.myForm.phone.focus() ;
+            return false;
+         }
+
+         if( document.myForm.message.value == "" )
+         {
+            alert( "Please provide a message!" );
+            document.myForm.message.focus() ;
+            return false;
+         }
+         
+      }
+
+      </script>
 </head>
 
 <body>
@@ -13,9 +96,10 @@
     <!-- Navigation -->
     <nav class="main-menu">
         <ul>
-            <li><a href="#first">Home Page</a></li>
-            <li><a href="#second">Portfolio</a></li>
-            <li><a href="#third">Contact Form</a></li>
+            <li><a href="#first">ABOUT</a></li>
+            <li><a href="#second">SKILLS</a></li>
+            <li><a href="#third">PORTFOLIO</a></li>
+            <li><a href="#fourth">CONTACT</a></li>
         </ul>
     </nav>
 
@@ -23,17 +107,31 @@
     <section id="first">
         <div class="container">
 
-        <h1>Sarah Kingsley</h1>
+        <img class="center" src="images/profilepic.jpg" alt="tshirt">
 
-            
+        <h1>Sarah Kingsley</h1>
+        <h2>UI Designer & Software Engineer</h2>
+
+        <h3>Qualifications</h3>
+        <p>Coursework in Java, web, HCI and mobile.</p>
+        <p>Experience incorporating libraries APIs and databases.</p>
+        <p>Designer and developer within 3 different firms.</p>
+        <p>Strong background in the Fine Arts and maintaining a creative process.</p>
+
+        <h3>Education</h3>
+        <p>University of Rochester - Graduating Spring 2017 with a Bachelor of Arts in Computer Science and Studio Arts</p>
+        <p>Selected Coursework: Mobile App Decelopment, Advanced Front End Development, Human Computer Interaction, Artificial Intelligence, Advanced Digital Art, Computer Organziation, Web Programming, Principles of Marketing, Financial Accounting, Senior Studio in the Fine Arts</p>
+
+        <h3>Tools</h3>
+        
         </div><!-- .container -->
     </section>
 
     <!-- Second Section -->
     <section id="second">
-        <div class="container">
+        <div class="skills">
 
-            <h1>Portfolio</h1>
+            <h1>Skills</h1>
 
             <h2>Fine Arts</h2>
 
@@ -96,7 +194,114 @@
     <section id="third">
         <div class="container">
 
-            <h1>Contact Me</h1>      
+            <h1>Portfolio</h1>
+
+            <!-- RESOURCE: http://www.w3schools.com/howto/howto_js_lightbox.asp -->
+            <div class="row">
+              <div class="column">
+                <img src="images/finearts/Isabelle-sm.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+              </div>
+              <div class="column">
+                <img src="images/finearts/Anaclaire-sm.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+              </div>
+              <div class="column">
+                <img src="images/finearts/TechnologyIsEmpathy-sm.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+              </div>
+              <div class="column">
+                <img src="images/finearts/TheatreEmpathy-sm.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+              </div>
+            </div>
+
+            <div id="myModal" class="modal">
+              <span class="close cursor" onclick="closeModal()">&times;</span>
+              <div class="modal-content">
+
+                <div class="mySlides">
+                  <div class="numbertext">1 / 4</div>
+                    <img src="images/finearts/Isabelle.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">2 / 4</div>
+                    <img src="images/finearts/Anaclaire.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">3 / 4</div>
+                    <img src="images/finearts/TechnologyIsEmpathy.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides">
+                  <div class="numbertext">4 / 4</div>
+                    <img src="images/finearts/TheatreEmpathy.jpg" style="width:100%">
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+                <div class="caption-container">
+                  <p id="caption"></p>
+                </div>
+
+                <div class="column">
+                  <img class="demo" src="images/finearts/Isabelle-sm.jpg" onclick="currentSlide(1)" alt="Nature">
+                </div>
+
+                <div class="column">
+                  <img class="demo" src="images/finearts/Anaclaire-sm.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+                </div>
+
+                <div class="column">
+                  <img class="demo" src="images/finearts/TechnologyIsEmpathy-sm.jpg" onclick="currentSlide(3)" alt="Mountains">
+                </div>
+
+                <div class="column">
+                  <img class="demo" src="images/finearts/TheatreEmpathy-sm.jpg" onclick="currentSlide(4)" alt="Lights">
+                </div>
+              </div>
+            </div>
+
+
+       </div><!-- .container -->
+
+    </section>
+
+    <!-- Fourth Section -->
+    <section id="fourth">
+        <div class="container">
+
+            <h1>Contact Me</h1>
+
+            <form method= "post" action="database-write.php" name="myForm" onsubmit="return(validate());">
+         <table cellspacing="2" cellpadding="8">
+            
+            <tr>
+               <td align="right">Name</td>
+               <td><input type="text" name="name" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Email Address</td>
+               <td><input type="text" name="email" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right">Phone Number</td>
+               <td><input type="text" name="phone" /></td>
+            </tr>
+
+            <tr>
+               <td align="right">Message</td>
+               <td><input type="text" name="message" /></td>
+            </tr>
+            
+            <tr>
+               <td align="right"></td>
+               <td><input type="submit" value="Submit" /></td>
+            </tr>
+            
+         </table>
+      </form>     
 
        </div><!-- .container -->
 

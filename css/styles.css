@@ -8,11 +8,15 @@ p { margin-top: 0; }
 	margin-left: 15px;
 }
 
-.frame {
-	border: 1px solid #666;
-	padding: 5px;
-	width: 300px;
+.center {
+	float: center;
 }
+
+
+.frame {
+	padding: 5px;
+}
+
 
 /*	****************************************
 	Modules (reusable classes)
@@ -29,5 +33,34 @@ p { margin-top: 0; }
 }
 
 /*	****************************************
-	Formmatting
+	Formatting
 	**************************************** */
+
+h1 {
+	font-family: 'Josefin Slab', serif;
+	font-size: 28px;
+}
+
+h2 {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 26px;
+	text-align: left;
+}
+
+h3 {
+	font-family: 'Josefin Slab', serif;
+	font-size: 22px;
+	text-align: left;
+}
+
+p {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 16px;
+	text-align: left;
+}
+
+td {
+	font-family: 'PT Sans Narrow', sans-serif;
+	font-size: 16px;
+	text-align: left;
+}
