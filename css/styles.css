@@ -64,3 +64,9 @@ td {
 	font-size: 16px;
 	text-align: left;
 }
+
+.third{
+	display: inline-block;
+	width:30%;
+	margin: 0 1%;
+}

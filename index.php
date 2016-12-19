@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
     <meta charset="utf-8">
@@ -11,7 +10,100 @@
 
     <link rel="stylesheet" href="css/long-scrolly.css" />
     <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/lightbox.css" />
+
+    <style>
+        .row > .column {
+          padding: 0 8px;
+        }
+
+        .row:after {
+          content: "";
+          display: table;
+          clear: both;
+        }
+
+        .column {
+          float: left;
+          width: 22%;
+        }
+
+        /* The Modal (background) */
+        .modal {
+          display: none;
+          position: fixed;
+          z-index: 1;
+          padding-top: 100px;
+          left: 0;
+          top: 0;
+          width: 100%;
+          height: 100%;
+          overflow: auto;
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Modal Content */
+        .modal-content {
+          position: relative;
+          background-color: #fefefe;
+          margin: auto;
+          padding: 0;
+          width: 30%;
+          max-width: 1000px;
+        }
+
+        /* The Close Button */
+        .close {
+          color: white;
+          position: absolute;
+          top: 54px;
+          right: 25px;
+          font-size: 35px;
+          font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+          color: #999;
+          text-decoration: none;
+          cursor: pointer;
+        }
+
+        .mySlides {
+          display: none;
+        }
+
+        .cursor {
+          cursor: pointer
+        }
+
+        img {
+          margin-bottom: -4px;
+        }
+
+        .caption-container {
+          text-align: center;
+          background-color: rgba(0, 0, 0, 0.8);
+          padding: 2px 16px;
+          color: white;
+        }
+
+        .demo {
+          opacity: 0.6;
+        }
+
+        .active,
+        .demo:hover {
+          opacity: 1;
+        }
+
+        img.hover-shadow {
+          transition: 0.3s
+        }
+
+        .hover-shadow:hover {
+          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        }
+    </style>
 
     <script type="text/javascript">
         function openModal() {
@@ -110,19 +202,31 @@
         <img class="center" src="images/profilepic.jpg" alt="tshirt">
 
         <h1>Sarah Kingsley</h1>
-        <h2>UI Designer & Software Engineer</h2>
 
-        <h3>Qualifications</h3>
-        <p>Coursework in Java, web, HCI and mobile.</p>
-        <p>Experience incorporating libraries APIs and databases.</p>
-        <p>Designer and developer within 3 different firms.</p>
-        <p>Strong background in the Fine Arts and maintaining a creative process.</p>
+        <div class="third">
+        <h3 style="text-align: center">Qualifications</h3>
+        <p style="text-align: center">Coursework in Java, web, HCI and mobile.</p>
+        <p style="text-align: center">Experience incorporating libraries APIs and databases.</p>
+        <p style="text-align: center">Designer and developer within 3 different firms.</p>
+        <p style="text-align: center">Strong background in the Fine Arts and maintaining a creative process.</p>
+        </div>
 
-        <h3>Education</h3>
-        <p>University of Rochester - Graduating Spring 2017 with a Bachelor of Arts in Computer Science and Studio Arts</p>
-        <p>Selected Coursework: Mobile App Decelopment, Advanced Front End Development, Human Computer Interaction, Artificial Intelligence, Advanced Digital Art, Computer Organziation, Web Programming, Principles of Marketing, Financial Accounting, Senior Studio in the Fine Arts</p>
+        <div class="third">
+        <h3 style="text-align: center">Tools</h3>
+        <p style="text-align: center">Creative Cloud</p>
+        <p style="text-align: center">Microsoft Suite</p>
+        <p style="text-align: center">iWorks</p>
+        <p style="text-align: center">XCode</p>
+        <p style="text-align: center">Eclipse</p>
+        <p style="text-align: center">Android Studio</p>
+        <p style="text-align: center">Agile</p>
+        </div>
 
-        <h3>Tools</h3>
+        <div class="third">
+        <h3 style="text-align: center">Education</h3>
+        <p style="text-align: center">University of Rochester - Graduating Spring 2017 with a Bachelor of Arts in Computer Science and Studio Arts</p>
+        <p style="text-align: center">Selected Coursework: Mobile App Development, Advanced Front End Development, Human Computer Interaction, Artificial Intelligence, Advanced Digital Art, Computer Organziation, Web Programming, Principles of Marketing, Financial Accounting, Senior Studio in the Fine Arts</p>
+        </div>
         
         </div><!-- .container -->
     </section>
@@ -200,15 +304,19 @@
             <div class="row">
               <div class="column">
                 <img src="images/finearts/Isabelle-sm.jpg" onclick="openModal();currentSlide(1)" class="hover-shadow">
+                <p>First in a series of women in STEM, focusing on the underrepresentation of women in science and technology.</p>
               </div>
               <div class="column">
                 <img src="images/finearts/Anaclaire-sm.jpg" onclick="openModal();currentSlide(2)" class="hover-shadow">
+                <p>Second in a series of women in STEM, focusing on the underrepresentation of women in science and technology.</p>
               </div>
               <div class="column">
                 <img src="images/finearts/TechnologyIsEmpathy-sm.jpg" onclick="openModal();currentSlide(3)" class="hover-shadow">
+                <p>An exploration into asking whether technology is in fight with humanity or rather serves as an extension of ourselves.</p>
               </div>
               <div class="column">
                 <img src="images/finearts/TheatreEmpathy-sm.jpg" onclick="openModal();currentSlide(4)" class="hover-shadow">
+                <p>Images representing what I consider the ultimate form of empathy, theatre.</p>
               </div>
             </div>
 
@@ -217,47 +325,48 @@
               <div class="modal-content">
 
                 <div class="mySlides">
-                  <div class="numbertext">1 / 4</div>
+                  <!-- <div class="numbertext">1 / 4</div> -->
                     <img src="images/finearts/Isabelle.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                  <div class="numbertext">2 / 4</div>
+                  <!-- <div class="numbertext">2 / 4</div> -->
                     <img src="images/finearts/Anaclaire.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                  <div class="numbertext">3 / 4</div>
+                  <!-- <div class="numbertext">3 / 4</div> -->
                     <img src="images/finearts/TechnologyIsEmpathy.jpg" style="width:100%">
                 </div>
 
                 <div class="mySlides">
-                  <div class="numbertext">4 / 4</div>
+                  <!-- <div class="numbertext">4 / 4</div> -->
                     <img src="images/finearts/TheatreEmpathy.jpg" style="width:100%">
                 </div>
-
+<!-- 
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a> -->
 
-                <div class="caption-container">
+                <!-- <div class="caption-container">
                   <p id="caption"></p>
                 </div>
 
                 <div class="column">
-                  <img class="demo" src="images/finearts/Isabelle-sm.jpg" onclick="currentSlide(1)" alt="Nature">
+                  <img class="demo" src="images/finearts/Isabelle-sm.jpg" onclick="currentSlide(1)" alt="Isabelle - Data Science">
+                  <p>DIS</p>
                 </div>
 
                 <div class="column">
-                  <img class="demo" src="images/finearts/Anaclaire-sm.jpg" onclick="currentSlide(2)" alt="Trolltunga">
+                  <img class="demo" src="images/finearts/Anaclaire-sm.jpg" onclick="currentSlide(2)" alt="Anaclaire - Brain and Cognitive Sciences">
                 </div>
 
                 <div class="column">
-                  <img class="demo" src="images/finearts/TechnologyIsEmpathy-sm.jpg" onclick="currentSlide(3)" alt="Mountains">
+                  <img class="demo" src="images/finearts/TechnologyIsEmpathy-sm.jpg" onclick="currentSlide(3)" alt="Technology Is Empathy">
                 </div>
 
                 <div class="column">
-                  <img class="demo" src="images/finearts/TheatreEmpathy-sm.jpg" onclick="currentSlide(4)" alt="Lights">
-                </div>
+                  <img class="demo" src="images/finearts/TheatreEmpathy-sm.jpg" onclick="currentSlide(4)" alt="Empathy on Stage">
+                </div> -->
               </div>
             </div>
 
